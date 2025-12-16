@@ -6,7 +6,11 @@ def sum(arr: list) -> int:
     """
     total = 0
     for num in arr:
-        total += num
+        try:
+            total += num
+        except:
+            continue
+
     return total
 
 
@@ -21,9 +25,9 @@ def cleanData(rawData: list) -> list:
     for item in rawData:
         try:
             float(item)
-            result.append(item)
+            result.append(float(item))
         except:
-            pass
+            continue
     return result
 
 
